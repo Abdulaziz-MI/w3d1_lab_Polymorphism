@@ -10,7 +10,7 @@ protected  int passing;
     protected int threePointShot;
 
     protected int midRangeShot;
-    protected int dunks;
+    protected int dunk;
     protected int dribbling;
     protected int insideShot;
     protected int rebounding;
@@ -45,9 +45,10 @@ this.strengths = new  ArrayList<Integer>();
         return this.strengths.size();
     }
 
-    public void setDunks(int dunks) {
-    this.dunks = dunks;
+    public void setDunk(int dunk) {
+    this.dunk = dunk;
     }
+
 
     public void setInsideDefense(int insideDefense) {
         this.insideDefense = insideDefense;
@@ -89,8 +90,8 @@ this.strengths = new  ArrayList<Integer>();
         return this.speed;
     }
 
-    public int getDunks() {
-        return this.dunks;
+    public int getDunk() {
+        return this.dunk;
     }
 
     public int getInsideDefense() {

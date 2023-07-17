@@ -27,20 +27,20 @@ Team team;
         nikolaJokic.addStrengthAttribute(nikolaJokic.passing);
 
         joelEmbid =new Center("Joel Embid", 23,"7'00");
-        joelEmbid.setDunks(97);
+        joelEmbid.setDunk(97);
         joelEmbid.setRebounding(98);
         joelEmbid.setInsideShot(96);
-        joelEmbid.addStrengthAttribute(joelEmbid.dunks);
+        joelEmbid.addStrengthAttribute(joelEmbid.dunk);
         joelEmbid.addStrengthAttribute(joelEmbid.rebounding);
         joelEmbid.addStrengthAttribute(joelEmbid.insideShot);
 
         kevinDurant = new Forward("Kevin Durant", 34,"6'11");
         kevinDurant.setMidRangeShot(99);
         kevinDurant.setThreePointShot(98);
-        kevinDurant.setDunks(89);
+        kevinDurant.setDunk(89);
         kevinDurant.addStrengthAttribute(kevinDurant.midRangeShot);
         kevinDurant.addStrengthAttribute(kevinDurant.threePointShot);
-        kevinDurant.addStrengthAttribute(kevinDurant.dunks);
+        kevinDurant.addStrengthAttribute(kevinDurant.dunk);
 
         lukaDoncic =new Forward("Luka Doncic", 23,"6'7");
         lukaDoncic.setThreePointShot(97);

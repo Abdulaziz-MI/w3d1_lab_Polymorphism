@@ -8,8 +8,8 @@ class CenterTest {
 
 
 
-    Player nikolaJokic;
-    Player joelEmbid;
+    public Player nikolaJokic;
+    public Player joelEmbid;
     @BeforeEach
     void setUp() {
         nikolaJokic = new Forward("Nikola Jokic", 28,"7'00");
@@ -21,10 +21,10 @@ class CenterTest {
         nikolaJokic.addStrengthAttribute(nikolaJokic.passing);
 
         joelEmbid =new Forward("Joel Embid", 23,"7'00");
-        joelEmbid.setDunks(97);
+        joelEmbid.setDunk(97);
         joelEmbid.setRebounding(98);
         joelEmbid.setInsideShot(96);
-        joelEmbid.addStrengthAttribute(joelEmbid.dunks);
+        joelEmbid.addStrengthAttribute(joelEmbid.getDunk());
         joelEmbid.addStrengthAttribute(joelEmbid.rebounding);
         joelEmbid.addStrengthAttribute(joelEmbid.insideShot);
 
@@ -49,9 +49,9 @@ class CenterTest {
     }
 
     @Test
-    void setDunks() {
-        joelEmbid.setDunks(99);
-        assertEquals(99, joelEmbid.getDunks());
+    void setDunk() {
+        joelEmbid.setDunk(99);
+        assertEquals(99, joelEmbid.getDunk());
     }
 
     @Test

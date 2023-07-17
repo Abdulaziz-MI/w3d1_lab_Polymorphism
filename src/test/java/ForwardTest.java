@@ -13,10 +13,10 @@ class ForwardTest {
         kevinDurant = new Forward("Kevin Durant", 34,"6'11");
         kevinDurant.setMidRangeShot(99);
         kevinDurant.setThreePointShot(98);
-        kevinDurant.setDunks(89);
+        kevinDurant.setDunk(89);
         kevinDurant.addStrengthAttribute(kevinDurant.midRangeShot);
         kevinDurant.addStrengthAttribute(kevinDurant.threePointShot);
-        kevinDurant.addStrengthAttribute(kevinDurant.dunks);
+        kevinDurant.addStrengthAttribute(kevinDurant.dunk);
 
         lukaDoncic =new Forward("Luka Doncic", 23,"6'7");
       lukaDoncic.setThreePointShot(97);
@@ -47,9 +47,9 @@ class ForwardTest {
     }
 
     @Test
-    void setDunks() {
-        kevinDurant.setDunks(99);
-        assertEquals(99, kevinDurant.getDunks());
+    void setdunk() {
+        kevinDurant.setDunk(99);
+        assertEquals(99, kevinDurant.getDunk());
     }
 
     @Test
