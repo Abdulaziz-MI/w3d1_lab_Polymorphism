@@ -1,3 +1,7 @@
+package models;
+
+import models.Forward;
+import models.Player;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -12,21 +16,21 @@ class CenterTest {
     public Player joelEmbid;
     @BeforeEach
     void setUp() {
-        nikolaJokic = new Forward("Nikola Jokic", 28,"7'00");
+        nikolaJokic = new Forward("Nikola Jokic", 28,"7'00",5);
         nikolaJokic.setMidRangeShot(96);
         nikolaJokic.setRebounding(98);
         nikolaJokic.setPassing(89);
-        nikolaJokic.addStrengthAttribute(nikolaJokic.midRangeShot);
-        nikolaJokic.addStrengthAttribute(nikolaJokic.rebounding);
-        nikolaJokic.addStrengthAttribute(nikolaJokic.passing);
+        nikolaJokic.addStrengthAttribute(nikolaJokic.getMidRangeShot());
+        nikolaJokic.addStrengthAttribute(nikolaJokic.getRebounding());
+        nikolaJokic.addStrengthAttribute(nikolaJokic.getPassing());
 
-        joelEmbid =new Forward("Joel Embid", 23,"7'00");
+        joelEmbid =new Forward("Joel Embid", 23,"7'00",5);
         joelEmbid.setDunk(97);
         joelEmbid.setRebounding(98);
         joelEmbid.setInsideShot(96);
         joelEmbid.addStrengthAttribute(joelEmbid.getDunk());
-        joelEmbid.addStrengthAttribute(joelEmbid.rebounding);
-        joelEmbid.addStrengthAttribute(joelEmbid.insideShot);
+        joelEmbid.addStrengthAttribute(joelEmbid.getRebounding());
+        joelEmbid.addStrengthAttribute(joelEmbid.getInsideShot());
 
     }
 
@@ -104,13 +108,19 @@ class CenterTest {
 
     @Test
     void addStrengthAttribute() {
-        joelEmbid.addStrengthAttribute(joelEmbid.threePointShot);
-        assertTrue(joelEmbid.strengths.contains(joelEmbid.threePointShot));
+        joelEmbid.addStrengthAttribute(joelEmbid.getThreePointShot());
+        assertEquals(4, joelEmbid.getStrengths());
     }
 
     @Test
     void defensivePlay() {
         assertEquals("Joel Embid with a shot contest!", joelEmbid.defensivePlay());
+    }
+    @Test
+    void testDefensivePlay() {
+        String actual = joelEmbid.defensivePlay("BIG BLOCK");
+        String expected = "Joel Embid with a BIG BLOCK!";
+        assertEquals(expected,actual);
     }
 
     @Test

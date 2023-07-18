@@ -1,20 +1,25 @@
+package models;
+
+import interfaces.ISell;
+
 public class Guard extends Player {
 
 
 
-    public Guard(String name, int age, String heightInFeet) {
-        super(name, age, heightInFeet);
+    public Guard(String name, int age, String heightInFeet, int priceInMillion) {
+        super(name, age, heightInFeet, priceInMillion);
     }
-@Override
+
+
 public String defensivePlay(){
     return this.name + " with a steal!";
     }
 
-
-    @Override
+    //OVERLOAD
     public String offensivePlay(){
        return this.name +" with a layup!";
     }
+
 
 }
 

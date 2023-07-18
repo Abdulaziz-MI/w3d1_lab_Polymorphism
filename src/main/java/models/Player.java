@@ -1,10 +1,13 @@
+package models;
+
+import interfaces.ISell;
+
 import java.util.ArrayList;
 
-public abstract class Player {
+public abstract class Player implements ISell {
     protected  String name;
 protected  int age;
 protected String heightInFeet;
-
     protected int speed;
 protected  int passing;
     protected int threePointShot;
@@ -19,14 +22,18 @@ protected  int passing;
 
     protected ArrayList<Integer> strengths;
 
+    protected int priceInMillion;
 
 
-public Player (String name, int age, String heightInFeet){
+
+public Player (String name, int age, String heightInFeet, int priceInMillion){
     this.name= name;
 this.age = age;
 this.heightInFeet = heightInFeet;
 this.strengths = new  ArrayList<Integer>();
+    this.priceInMillion = priceInMillion;
 }
+
 
 
     public String getName() {
@@ -124,13 +131,30 @@ this.strengths = new  ArrayList<Integer>();
         this.dribbling = dribbling;
     }
 
+
     public void addStrengthAttribute(int attribute){
     this.strengths.add(attribute);
     }
 
 
-    public String defensivePlay(){return "";}
+    public abstract String defensivePlay();// to be overridden
 
-    public String offensivePlay(){return "";}
+public String defensivePlay(String defensivePlay)//overload
+    {return this.name + " with a "+ defensivePlay+"!";}
+
+
+    public abstract String offensivePlay();// to be overridden
+
+public String offensivePlay(String offensivePlay){return this.name +" with a "+ offensivePlay;
+    }
+
+    @Override
+    public int getPriceInMillion() {
+        return this.priceInMillion;
+    }
+
+
+
+
 
 }

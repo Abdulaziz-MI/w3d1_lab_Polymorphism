@@ -1,3 +1,7 @@
+package models;
+
+import models.Forward;
+import models.Player;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -10,21 +14,21 @@ class ForwardTest {
     Player lukaDoncic;
     @BeforeEach
     void setUp() {
-        kevinDurant = new Forward("Kevin Durant", 34,"6'11");
+        kevinDurant = new Forward("Kevin Durant", 34,"6'11",5);
         kevinDurant.setMidRangeShot(99);
         kevinDurant.setThreePointShot(98);
         kevinDurant.setDunk(89);
-        kevinDurant.addStrengthAttribute(kevinDurant.midRangeShot);
-        kevinDurant.addStrengthAttribute(kevinDurant.threePointShot);
-        kevinDurant.addStrengthAttribute(kevinDurant.dunk);
+        kevinDurant.addStrengthAttribute(kevinDurant.getMidRangeShot());
+        kevinDurant.addStrengthAttribute(kevinDurant.getThreePointShot());
+        kevinDurant.addStrengthAttribute(kevinDurant.getDunk());
 
-        lukaDoncic =new Forward("Luka Doncic", 23,"6'7");
+        lukaDoncic =new Forward("Luka Doncic", 23,"6'7",5);
       lukaDoncic.setThreePointShot(97);
       lukaDoncic.setPassing(98);
       lukaDoncic.setDribbling(96);
-      lukaDoncic.addStrengthAttribute(lukaDoncic.threePointShot);
-      lukaDoncic.addStrengthAttribute(lukaDoncic.passing);
-      lukaDoncic.addStrengthAttribute(lukaDoncic.dribbling);
+      lukaDoncic.addStrengthAttribute(lukaDoncic.getThreePointShot());
+      lukaDoncic.addStrengthAttribute(lukaDoncic.getPassing());
+      lukaDoncic.addStrengthAttribute(lukaDoncic.getDribbling());
 
     }
 
@@ -102,8 +106,8 @@ class ForwardTest {
 
     @Test
     void addStrengthAttribute() {
-        kevinDurant.addStrengthAttribute(kevinDurant.threePointShot);
-        assertTrue(kevinDurant.strengths.contains(kevinDurant.threePointShot));
+        kevinDurant.addStrengthAttribute(kevinDurant.getThreePointShot());
+        assertEquals(4, kevinDurant.getStrengths());
     }
 
     @Test

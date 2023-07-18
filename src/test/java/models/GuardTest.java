@@ -1,3 +1,6 @@
+package models;
+
+import models.Guard;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -9,21 +12,21 @@ class GuardTest {
     Guard stephenCurry;
     @BeforeEach
     void setUp() {
-         kyrieIrving = new Guard("Kyrie Irving", 30,"6'3");
+         kyrieIrving = new Guard("Kyrie Irving", 30,"6'3",4);
          kyrieIrving.setDribbling(98);
         kyrieIrving.setThreePointShot(93);
          kyrieIrving.setPassing(80);
-         kyrieIrving.addStrengthAttribute(kyrieIrving.dribbling);
-         kyrieIrving.addStrengthAttribute(kyrieIrving.threePointShot);
-         kyrieIrving.addStrengthAttribute(kyrieIrving.passing);
+         kyrieIrving.addStrengthAttribute(kyrieIrving.getDribbling());
+         kyrieIrving.addStrengthAttribute(kyrieIrving.getThreePointShot());
+         kyrieIrving.addStrengthAttribute(kyrieIrving.getPassing());
 
-         stephenCurry =new Guard("Stephen Curry", 31,"6'3");
+         stephenCurry =new Guard("Stephen Curry", 31,"6'3",5);
          stephenCurry.setThreePointShot(99);
          stephenCurry.setDribbling(95);
          stephenCurry.setPassing(82);
-         stephenCurry.addStrengthAttribute(stephenCurry.threePointShot);
-         stephenCurry.addStrengthAttribute(stephenCurry.dribbling);
-         stephenCurry.addStrengthAttribute(stephenCurry.passing);
+         stephenCurry.addStrengthAttribute(stephenCurry.getThreePointShot());
+         stephenCurry.addStrengthAttribute(stephenCurry.getDribbling());
+         stephenCurry.addStrengthAttribute(stephenCurry.getPassing());
 
     }
 
@@ -51,7 +54,7 @@ class GuardTest {
     @Test
     void getStrengths() {
 
-        kyrieIrving.addStrengthAttribute(kyrieIrving.passing);
+        kyrieIrving.addStrengthAttribute(kyrieIrving.getPassing());
         int actual = (kyrieIrving.getStrengths());
         int expected =4;
         assertSame(expected, actual);
