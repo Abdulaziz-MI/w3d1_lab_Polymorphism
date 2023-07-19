@@ -16,8 +16,8 @@ public void addPlayer(Player player) {
     this.playersInMarket.add(player);
     }
 
-    public ArrayList<Player> getPlayersInMarket() {
-        return playersInMarket;
+    public int getPlayersInMarket() {
+        return this.playersInMarket.size();
     }
 
     public void sellPlayer(Player player){

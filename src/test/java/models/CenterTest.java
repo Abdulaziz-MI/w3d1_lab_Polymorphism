@@ -12,11 +12,11 @@ class CenterTest {
 
 
 
-    public Player nikolaJokic;
-    public Player joelEmbid;
+     Center nikolaJokic;
+     Center joelEmbid;
     @BeforeEach
     void setUp() {
-        nikolaJokic = new Forward("Nikola Jokic", 28,"7'00",5);
+        nikolaJokic = new Center("Nikola Jokic", 28,"7'00",5);
         nikolaJokic.setMidRangeShot(96);
         nikolaJokic.setRebounding(98);
         nikolaJokic.setPassing(89);
@@ -24,7 +24,7 @@ class CenterTest {
         nikolaJokic.addStrengthAttribute(nikolaJokic.getRebounding());
         nikolaJokic.addStrengthAttribute(nikolaJokic.getPassing());
 
-        joelEmbid =new Forward("Joel Embid", 23,"7'00",5);
+        joelEmbid =new Center("Joel Embid", 23,"7'00",5);
         joelEmbid.setDunk(97);
         joelEmbid.setRebounding(98);
         joelEmbid.setInsideShot(96);
@@ -114,7 +114,7 @@ class CenterTest {
 
     @Test
     void defensivePlay() {
-        assertEquals("Joel Embid with a shot contest!", joelEmbid.defensivePlay());
+        assertEquals("Joel Embid with a block!", joelEmbid.defensivePlay());
     }
     @Test
     void testDefensivePlay() {
@@ -125,7 +125,7 @@ class CenterTest {
 
     @Test
     void offensivePlay() {
-        assertEquals("Joel Embid with a dunk!", joelEmbid.offensivePlay());
+        assertEquals("Joel Embid with a big-man dunk!", joelEmbid.offensivePlay());
     }
 
 }

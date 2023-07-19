@@ -10,7 +10,7 @@ class TeamTest {
 Team team;
     Center nikolaJokic;
     Center joelEmbid;
-    Forward kevinDurant;
+    Player kevinDurant;
     Forward lukaDoncic;
     Guard kyrieIrving;
     Guard stephenCurry;
@@ -152,10 +152,16 @@ team.buy(coach);
     }
     @Test public void getCoaches(){
         team.buy(coach);
-        assertEquals(1, team.coaches.size());
+        assertEquals(1, team.getCoaches().size());
     }
     @Test public void getBudgetInMillion(){
         assertEquals(25, team.getBudgetInMillion());
     }
+
+   @Test
+    public void offensivePlay(){
+       String actual = kevinDurant.offensivePlay("THREE");
+       String expected = "Kevin Durant with a THREE";
+   }
 
 }

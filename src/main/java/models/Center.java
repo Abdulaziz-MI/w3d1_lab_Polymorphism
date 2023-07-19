@@ -10,7 +10,7 @@ public class Center extends Player {
     public String defensivePlay(){return this.name + " with a block!";}
 
 
-    public String offensivePlay(){return this.name +" with big-man dunk!";}
+    public String offensivePlay(){return this.name +" with a big-man dunk!";}
 
 
 
